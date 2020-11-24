@@ -16,7 +16,7 @@ public class No222 {
         else return countNodes(root.left) + (1 << right);
     }
 
-    public int getDepth(TreeNode root) {
+    private int getDepth(TreeNode root) {
         int cnt = 0;
         while (root != null) {
             ++cnt;
