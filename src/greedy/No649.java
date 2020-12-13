@@ -10,12 +10,14 @@ public class No649 {
         // 分别存储有资格投票的参议员顺序
         Queue<Integer> radiant = new LinkedList<>();
         Queue<Integer> dire = new LinkedList<>();
+
         for (int i = 0; i < senate.length(); ++i) {
             if (senate.charAt(i) == 'R')
                 radiant.offer(i);
             else
                 dire.offer(i);
         }
+
         while (radiant.size() > 0 && dire.size() > 0) {
             // 总是将按照投票顺序的下一名对方阵营议员投票出去
             if (radiant.peek() < dire.peek()) {
