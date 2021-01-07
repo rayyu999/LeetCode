@@ -1,11 +1,14 @@
 package test;
 
 
+import recursion.JZOffer16;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println(1 << 4 - 1);
+        JZOffer16 jzOffer16 = new JZOffer16();
+        System.out.println(jzOffer16.myPow(2.1, 3));
 
     }
 
