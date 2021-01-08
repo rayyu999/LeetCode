@@ -1,14 +1,16 @@
 package test;
 
-
-import recursion.JZOffer16;
+import dfs.No46;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        JZOffer16 jzOffer16 = new JZOffer16();
-        System.out.println(jzOffer16.myPow(2.1, 3));
+        No46 no46 = new No46();
+
+        int[] a = new int[]{1,2,3};
+        no46.permute(a);
+        System.out.println(a);
 
     }
 
