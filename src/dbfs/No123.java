@@ -1,29 +1,30 @@
-package dfs;
+package dbfs;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class No188 {
+public class No123 {
 
-    public int maxProfit(int k, int[] prices) {
+    public int maxProfit(int[] prices) {
         Map<Key, Integer> map = new HashMap<>();
-        return dfs(k, prices, 0, 0, 0, map);
+        return dfs(prices, 0, 0, 0, map);
     }
 
-    private int dfs(int k, int[] prices, int index, int status, int cnt, Map<Key, Integer> map) {
-        // 递归边界
-        if (cnt == k || index >= prices.length) return 0;
-        Key key = new Key(index, status, cnt);
+    private int dfs(int[] prices, int index, int status, int k, Map<Key, Integer> map) {
+        // 递归终止条件
+        if (k == 2 || index >= prices.length) return 0;
+        Key key = new Key(index, status, k);
         if (map.containsKey(key)) return map.get(key);
-        // 定义三个变量记录买入、卖出、不动
+        // 定义三个变量记录买、卖、不动
         int buy = 0, sell = 0, hold = 0;
-        hold = dfs(k, prices, index+1, status, cnt, map);
+        // 不动的情况
+        hold = dfs(prices, index+1, status, k, map);
         if (status == 1) {
-            // 卖出
-            sell = dfs(k, prices, index+1, 0, cnt+1, map) + prices[index];
+            // 递归处理卖的情况
+            sell = dfs(prices, index+1, 0, k+1, map) + prices[index];
         } else {
-            // 买入
-            buy = dfs(k, prices, index+1, 1, cnt, map) - prices[index];
+            // 递归处理买的情况
+            buy = dfs(prices, index+1, 1, k, map) - prices[index];
         }
         int cur = Math.max(hold, Math.max(sell, buy));
         map.put(key, cur);
