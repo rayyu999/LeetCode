@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @Author Ray
  * @Date 2021/5/27 23:43
- * @Description
+ * @Description 56.合并区间
  */
 public class No56 {
 
