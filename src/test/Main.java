@@ -4,17 +4,15 @@ package test;
 import arrays.JZOffer61;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] a = new int[]{0, 0, 1, 2, 5};
-
-        boolean b = JZOffer61.isStraight(a);
-
-        System.out.println(Arrays.toString(a));
-        System.out.println(b);
+        Scanner sc = new Scanner(System.in);
+        String timeStr = sc.next();
+        String depStr = sc.next();
 
     }
 
