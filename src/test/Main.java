@@ -2,19 +2,24 @@ package test;
 
 
 import arrays.JZOffer61;
+import dbfs.No1239;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] a = new int[]{0, 0, 1, 2, 5};
+        String[] a = new String[]{"cha","r","act","ers"};
+        List<String> arr = Arrays.asList(a);
 
-        boolean b = JZOffer61.isStraight(a);
+        No1239 no1239 = new No1239();
 
-        System.out.println(Arrays.toString(a));
-        System.out.println(b);
+        int res = no1239.maxLength(arr);
+
+        System.out.println(res);
 
     }
 
