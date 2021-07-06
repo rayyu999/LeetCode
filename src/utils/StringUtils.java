@@ -35,4 +35,22 @@ public class StringUtils {
         return Arrays.stream(s.split(separator)).map(StringUtils::atoi).collect(Collectors.toList());
     }
 
+    /**
+     * 整数转字符串
+     * @param i 整数
+     * @return 对应的字符串
+     */
+    public static String itoa(Integer i) {
+        StringBuilder sb = new StringBuilder();
+        if (i > 0) {
+            while (i > 0) {
+                sb.append((char)(i%10 + '0'));
+                i /= 10;
+            }
+        } else {
+            sb.append('0');
+        }
+        return sb.reverse().toString();
+    }
+
 }
