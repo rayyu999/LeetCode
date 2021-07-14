@@ -7,7 +7,7 @@ import java.util.*;
  * @Date 2021/7/14 21:55
  * @Description 1418. 点菜展示表
  */
-public class No1818 {
+public class No1418 {
 
     public List<List<String>> displayTable(List<List<String>> orders) {
         Map<Integer, Map<String, Integer>> map = new TreeMap<>();
